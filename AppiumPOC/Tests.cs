@@ -2,8 +2,6 @@ using AppiumPOC.Blocks;
 using AppiumPOC.Pages;
 using AppiumPOC.Steps;
 using NUnit.Framework;
-using OpenQA.Selenium.Appium;
-using OpenQA.Selenium.Appium.Android;
 
 namespace AppiumPOC
 {
@@ -26,6 +24,7 @@ namespace AppiumPOC
         [Test]
         public void TeConfirmAllocationPercentage_Cautious()
         {
+            _cofirmAllocationSteps.OpenCautiousTab();
 
             // Assert
 
@@ -34,6 +33,7 @@ namespace AppiumPOC
         [Test]
         public void TeConfirmAllocationPercentage_Balanaced()
         {
+            _cofirmAllocationSteps.OpenBalancedTab();
 
             // Assert
 
@@ -42,6 +42,7 @@ namespace AppiumPOC
         [Test]
         public void TeConfirmAllocationPercentage_Adventurous()
         {
+            _confirmAllocationPage.OpenAdventurousTab();
 
             // Assert
 

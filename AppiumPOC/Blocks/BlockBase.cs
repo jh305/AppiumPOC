@@ -3,14 +3,14 @@ using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Support.UI;
 using System;
 
-namespace AppiumPOC.Pages
+namespace AppiumPOC.Blocks
 {
-    public  class PageBase
+    public class BlockBase
     {
         public AppiumDriver<AndroidElement> Driver;
         private WebDriverWait Wait;
 
-        public PageBase(AppiumDriver<AndroidElement> driver)
+        public BlockBase(AppiumDriver<AndroidElement> driver)
         {
             Driver = driver;
             Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(30));
@@ -29,5 +29,5 @@ namespace AppiumPOC.Pages
 
         public AndroidElement ReturnElement(string identifier) =>
             Driver.FindElementById(identifier);
-    }
+    }    
 }

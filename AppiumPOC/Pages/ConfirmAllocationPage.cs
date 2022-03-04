@@ -1,10 +1,5 @@
 ﻿using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AppiumPOC.Pages
 {
@@ -13,5 +8,14 @@ namespace AppiumPOC.Pages
         public ConfirmAllocationPage(AppiumDriver<AndroidElement> driver) : base(driver)
         {
         }
+
+        public void OpenCautiousTab() =>
+            WaitForAndReturnElement("allocationtypeCaution").Click();
+
+        public void OpenBalancedTab() =>
+            WaitForAndReturnElement("allocationtypeBalanced").Click();
+
+        public void OpenAdventurousTab() =>
+            WaitForAndReturnElement("allocationtypeAdventurous").Click();
     }
 }
