@@ -1,5 +1,6 @@
 ﻿using AppiumPOC.Blocks;
 using AppiumPOC.Pages;
+using System.Collections.Generic;
 
 namespace AppiumPOC.Steps
 {
@@ -18,19 +19,25 @@ namespace AppiumPOC.Steps
             _adventurousTab = adventurousTab;
         }
 
-        public void OpenAdventurousTab()
+        // Open the Cautious tab and get all Cautious fund allocations
+        public List<string> GetCautiousFundAllocationPercentages()
         {
-
+            _confirmAllocationPage.OpenCautiousTab();
+            return _cautiousTab.ReturnAllAllocationPercentages();
         }
 
-        public void OpenBalancedTab()
+        // Open the Balanced tab and get all Balanced fund allocations
+        public List<string> GetBalancedFundAllocationPercentages()
         {
-
+            _confirmAllocationPage.OpenCautiousTab();
+            return _balancedTab.ReturnAllAllocationPercentages();
         }
 
-        public void OpenCautiousTab()
+        // Open the Adventurous tab and get all Adventurous fund allocations
+        public List<string> GetAdventurousFundAllocationPercentages()
         {
-
+            _confirmAllocationPage.OpenAdventurousTab();
+            return _adventurousTab.ReturnAllAllocationPercentages();
         }
     }
 }

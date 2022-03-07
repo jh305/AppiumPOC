@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using AppiumPOC.Settings;
+using NUnit.Framework;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Remote;
@@ -25,7 +26,7 @@ namespace AppiumPOC
             capabilities.SetCapability("appActivity", "com.healthifyme.basic.activities.NewLoginSignupActivity");
 
             capabilities.SetCapability("NEW_COMAND_TIMEOUT", "50000");
-            capabilities.SetCapability("app", "C:\\Users\\105798\\testapplications\\HealthifyMe.apk");
+            capabilities.SetCapability("app", TestSettings_Dev.APKFileLocation);
             Thread.Sleep(2000);
             driver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4723/wd/hub"), capabilities);
 

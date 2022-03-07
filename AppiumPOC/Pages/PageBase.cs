@@ -17,7 +17,7 @@ namespace AppiumPOC.Pages
         }
 
         /// <summary>
-        /// Waits for and returns a webelement by searching and polling the page for the element
+        /// Waits for and returns a webelement by polling the page for the element
         /// for a certain amount of time (Currently set to 30 seconds in the constructor.)
         /// </summary>
         /// <param name="identifier">The Identifier.</param>
