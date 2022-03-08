@@ -8,6 +8,6 @@ namespace AppiumPOC.Settings
 {
     public static class TestSettings_Dev
     {
-        public static string APKFileLocation = "";
+        public static string APKFileLocation = "C:\\Users\\Justin\\Testapplications\\APpUnderTest_Dev.apk";
     }
 }

@@ -21,7 +21,7 @@ namespace AppiumPOC
             _cofirmAllocationSteps = new ConfirmAllocationSteps(_confirmAllocationPage, _cautiousTab, _balancedTab, _adventurousTab);
 
             // As all three tests take place on the same page, we could have steps in the Setup method which would login and navigate
-            // to the Confirm Allocation page. This way, the 3 tests are not reliant on each other and can be run indepdendntly.
+            // to the Confirm Allocation page. This way, the 3 tests are not reliant on each other and can be run independently.
         }
 
         [Test]

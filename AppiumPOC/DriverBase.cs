@@ -14,24 +14,30 @@ namespace AppiumPOC
         [SetUp]
         public void Setup()
         {
-            AppiumDriver<AndroidElement> driver;
-            string app = "C:\\Users\\105798\\testapplications\\HealthifyMe.apk";
+            AppiumOptions capabilities = new AppiumOptions();
 
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.SetCapability("deviceName", "emulator-5554");
-            capabilities.SetCapability(CapabilityType.Version, "6.0");
-            capabilities.SetCapability(CapabilityType.BrowserName, "Android");
-            capabilities.SetCapability(CapabilityType.Platform, "Android");
-            capabilities.SetCapability("appPackage", "com.healthifyme.basic");
-            capabilities.SetCapability("appActivity", "com.healthifyme.basic.activities.NewLoginSignupActivity");
-
-            capabilities.SetCapability("NEW_COMAND_TIMEOUT", "50000");
-            capabilities.SetCapability("app", TestSettings_Dev.APKFileLocation);
-            Thread.Sleep(2000);
-            driver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4723/wd/hub"), capabilities);
+            capabilities.AddAdditionalCapability("deviceName", "emulator-5554");
+            capabilities.AddAdditionalCapability(CapabilityType.Version, "6.0");
+            capabilities.AddAdditionalCapability(CapabilityType.BrowserName, "Android");
+            capabilities.AddAdditionalCapability(CapabilityType.Platform, "Android");
+            capabilities.AddAdditionalCapability("appPackage", "com.healthifyme.basic");
+            capabilities.AddAdditionalCapability("appActivity", "com.healthifyme.basic.activities.NewLoginSignupActivity");
+            capabilities.AddAdditionalCapability("NEW_COMAND_TIMEOUT", "50000");
+            capabilities.AddAdditionalCapability("app", TestSettings_Dev.APKFileLocation);
+            
+            Driver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4723/wd/hub"), capabilities);
+        }
 
 
-
+        // Teardown method after each test to dispose of the Appium driver
+        [TearDown]
+        public void TearDown()
+        {
+            if (Driver != null)
+            {
+                Driver.Quit();
+                Driver = null;
+            }                      
         }
     }
 }
