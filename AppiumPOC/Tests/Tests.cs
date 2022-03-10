@@ -5,7 +5,7 @@ using FluentAssertions;
 using NUnit.Framework;
 using System.Collections.Generic;
 
-namespace AppiumPOC
+namespace AppiumPOC.Tests
 {
     public class Tests : DriverBase
     {

@@ -6,23 +6,21 @@ namespace AppiumPOC.Blocks
 {
     public class AdventurousTab : BlockBase
     {
-        private List<string> _percentageAllocations;
-
         public AdventurousTab(AppiumDriver<AndroidElement> driver) : base(driver)
         {
         }
 
+        // Get all on screen percentages text values and return them
         public List<string> ReturnAllAllocationPercentages()
-        {
-            // Add all on screen percentages text values to the _percentageAllocations list and return it
-            _percentageAllocations = new List<string>()
+        {            
+            var percentageAllocations = new List<string>()
             {
                 GetAllocation1Element().Text,
                 GetAllocation2Element().Text,
                 GetAllocation3Element().Text,
             };
 
-            return _percentageAllocations;
+            return percentageAllocations;
         }
 
         private AndroidElement GetAllocation1Element() =>

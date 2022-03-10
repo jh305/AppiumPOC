@@ -7,13 +7,13 @@ namespace AppiumPOC.Blocks
 {
     public class BlockBase
     {
-        public AppiumDriver<AndroidElement> Driver;
-        private WebDriverWait Wait;
+        public AppiumDriver<AndroidElement> _driver;
+        private WebDriverWait _wait;
 
         public BlockBase(AppiumDriver<AndroidElement> driver)
         {
-            Driver = driver;
-            Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(30));
+            _driver = driver;
+            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
         }
 
         /// <summary>
@@ -23,11 +23,11 @@ namespace AppiumPOC.Blocks
         /// <param name="identifier">The Identifier.</param>
         public AndroidElement WaitForAndReturnElement(string identifier)
         {
-            Wait.Message = $"Failed to wait for ReturnElements(By.CssSelector: {identifier})) to return at least ";
-            return Wait.Until(d => ReturnElement(identifier));
+            _wait.Message = $"Failed to wait for ReturnElements(By.CssSelector: {identifier})) to return at least ";
+            return _wait.Until(d => ReturnElement(identifier));
         }
 
         public AndroidElement ReturnElement(string identifier) =>
-            Driver.FindElementById(identifier);
+            _driver.FindElementById(identifier);
     }    
 }

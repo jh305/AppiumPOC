@@ -11,6 +11,7 @@ namespace AppiumPOC.Steps
         private AdventurousTab _adventurousTab;
         private BalancedTab _balancedTab;
         private CautiousTab _cautiousTab;
+        
         public ConfirmAllocationSteps(ConfirmAllocationPage confirmAllocationPage, CautiousTab cautiousTab, BalancedTab balancedTab, AdventurousTab adventurousTab)
         {
             _confirmAllocationPage = confirmAllocationPage;
