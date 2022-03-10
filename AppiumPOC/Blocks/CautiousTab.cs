@@ -28,12 +28,12 @@ namespace AppiumPOC.Blocks
         }
 
         private AndroidElement GetAllocation1Element() =>
-            WaitForAndReturnElement("");
+            WaitForAndReturnElement("allocationpercentage4");
 
         private AndroidElement GetAllocation2Element() =>
-            WaitForAndReturnElement("");
+            WaitForAndReturnElement("allocationpercentage5");
 
         private AndroidElement GetAllocation3Element() =>
-            WaitForAndReturnElement("");
+            WaitForAndReturnElement("allocationpercentage6");
     }
 }
